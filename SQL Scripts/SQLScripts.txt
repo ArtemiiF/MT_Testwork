@@ -1,0 +1,16 @@
+--Выборка всех сотрулдников
+select * from dbo.Employees;
+
+--Сотрудников у кого зп выше 10000
+select * from dbo.Employees as e
+where e.Salary > 10000;
+
+--Удаление сотрудников старше 70 лет
+delete from dbo.Employees
+where DATEDIFF(YEAR,e.DateOfBirth,GETDATE()) >= 70;
+
+--Обновить зп до 15000 тем у ког меньше
+
+update dbo.Employees
+set Salary = 15000
+where Salary < 15000;
